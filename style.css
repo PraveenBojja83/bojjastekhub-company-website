@@ -33,7 +33,7 @@ header h1 {
     display: flex;               /* Arrange h1 and ul side by side */
     flex-direction: row;
     align-items: center;         /* Vertically center in the line */
-    gap: 100px;                   /* Space between name and links */
+    gap: 100px;                  /* Space between name and links */
 }
 
 .navbarcontainer nav .logo {
@@ -88,7 +88,6 @@ header h1 {
     color: white;
 }
 
-
 /* Footer styling */
 footer {
     background-color: #312f2f;
@@ -104,25 +103,6 @@ footer p {
     font-size: 14px;
     color: #bfbfbf;
     margin: 0; /* Remove default margin to center properly */
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav a {
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
 }
 
 /* MainPage Section */
@@ -170,24 +150,6 @@ footer p {
     background-color: #005bb5;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .MainPage h2 {
-        font-size: 28px;
-    }
-
-    .MainPage p {
-        font-size: 16px;
-    }
-
-    .MainPage .btn {
-        font-size: 16px;
-        padding: 12px 30px;
-    }
-}
-
-
-
 /* About Section */
 .about-section {
     background-color: #f0f4f8;
@@ -218,18 +180,16 @@ footer p {
     color: #222;
     text-align: center;
     height: 75vh;
-    
 }
 
-.service-containers{
+.service-containers {
     display: flex;
-    gap: 24px;              /* Space between cards */
-    overflow-x: auto;       /* Enables horizontal scrolling! */
+    gap: 24px;               /* Space between cards */
+    overflow-x: auto;        /* Enables horizontal scrolling! */
     padding: 20px 20px;
 }
 
-/* This is the key section for horizontal scrolling */
-
+/* Service cards */
 .service-list {
     background: rgba(255,255,255,0.96);
     color: #333;
@@ -268,33 +228,32 @@ footer p {
     }
 }
 
-
 /* Contact Section */
 .contact-section {
     background-color: #f9f9f9;
-    padding: 2px 0;
+    padding: 20px 0;
     color: #222;
     text-align: center;
-    height: 75vh;
-    display: flex;
+    /* Removed display:flex for mobile flexibility */
 }
 
-.contact-container{
+.contact-container {
     padding-left: 10px;
     padding-top: 30px;
-}
-
-.contact-container h2 {
-    font-size: 20px;
-    margin-bottom:5px;
-    color: #0a2240;
+    max-width: 600px;
+    margin: 0 auto;
     text-align: left;
 }
 
+.contact-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0a2240;
+}
+
 .contact-container p {
-    max-width: 700px;
-    margin: 0 auto 30px;
-    font-size: 10px;
+    font-size: 14px;
+    margin-bottom: 30px;
     color: #555;
 }
 
@@ -302,13 +261,13 @@ footer p {
     max-width: 500px;
     margin: 0 auto;
     text-align: left;
-    height: 40vh;
+    height: auto;
 }
 
 .contact-form label {
     font-weight: 600;
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
     color: #333;
 }
 
@@ -316,19 +275,19 @@ footer p {
 .contact-form input[type="email"],
 .contact-form textarea {
     width: 100%;
-    padding: 5px 5px;
-    margin-bottom: 2px;
+    padding: 10px 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 14px;
     resize: vertical;
 }
 
 .contact-form button.btn {
     background-color: dodgerblue;
     color: white;
-    padding: 10px 20px;
-    font-size: 10px;
+    padding: 14px 36px;
+    font-size: 18px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -341,20 +300,85 @@ footer p {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .about-section h2,
-    .services-section h2,
-    .contact-section h2 {
+    /* Navbar responsive */
+    .navbarcontainer nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .navbarcontainer nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .navbarcontainer nav ul li a {
+        padding: 10px;
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    /* Main page */
+    .MainPage h2 {
         font-size: 28px;
     }
 
-    .about-section p,
-    .services-list,
-    .contact-section p {
+    .MainPage p {
         font-size: 16px;
     }
 
+    .MainPage .btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    /* Services - stack vertically and disable scroll */
+    .service-containers {
+        flex-direction: column;
+        overflow-x: visible;
+        padding: 20px 10px;
+    }
+
+    .service-list {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Contact section */
+    .contact-container {
+        padding-left: 0;
+        max-width: 100%;
+        padding: 10px 20px 30px 20px;
+    }
+
+    .contact-container h2 {
+        font-size: 22px;
+    }
+
+    .contact-container p {
+        font-size: 16px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 16px;
+        padding: 12px 14px;
+    }
+
     .contact-form button.btn {
-        font-size: 10px;
-        padding: 5px 20px;
+        font-size: 16px;
+        padding: 14px;
+        width: 100%;
     }
 }
