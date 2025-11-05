@@ -37,6 +37,19 @@ header h1 {
     margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    header {
+        padding: 10px 8px;
+    }
+    header h1 {
+        font-size: 18px;
+        margin-bottom: 4px;
+        text-align: left;
+        word-break: break-word;
+    }
+}
+
+
 /* Navigation bar */
 .navbarcontainer nav {
     display: flex;               /* Arrange h1 and ul side by side */
@@ -159,6 +172,49 @@ footer p {
     background-color: #005bb5;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Navbar responsive */
+    .navbarcontainer nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .navbarcontainer nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .navbarcontainer nav ul li a {
+        padding: 10px;
+        width: auto;
+        display: flex;
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    /* Main page */
+    .MainPage h2 {
+        font-size: 28px;
+    }
+
+    .MainPage p {
+        font-size: 16px;
+    }
+
+    .MainPage .btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+
 /* About Section */
 .about-section {
     background-color: #f0f4f8;
@@ -180,6 +236,22 @@ footer p {
     font-size: 18px;
     line-height: 1.6;
     color: #555;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 20px 8px;
+        height: auto;
+    }
+    .about-section h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    .about-section p {
+        font-size: 16px;
+        max-width: 100%;
+        margin: 0 auto 16px;
+    }
 }
 
 /* Services Section */
@@ -236,6 +308,37 @@ footer p {
         padding: 18px 10px;
     }
 }
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 20px 2vw;
+        height: auto;
+    }
+    .service-containers {
+        flex-direction: column;
+        gap: 16px;
+        overflow-x: visible;
+        padding: 10px 2vw;
+    }
+    .service-list {
+        width: 100%;
+        max-width: none;
+        padding: 18px 8px;
+        margin: 0 auto 10px auto;
+        box-sizing: border-box;
+    }
+    .service-list img {
+        max-width: 90px;
+        margin-bottom: 12px;
+    }
+    .service-list h4 {
+        font-size: 1.05rem;
+    }
+    .service-list p {
+        font-size: 0.98rem;
+    }
+}
+
 
 /* Contact Section */
 .contact-section {
@@ -307,87 +410,41 @@ footer p {
     background-color: #005bb5;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
-    /* Navbar responsive */
-    .navbarcontainer nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .navbarcontainer nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .navbarcontainer nav ul li a {
-        padding: 10px;
-        width: 100%;
-        display: block;
+    .contact-section {
+        padding: 14px 2vw;
         text-align: left;
     }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    /* Main page */
-    .MainPage h2 {
-        font-size: 28px;
-    }
-
-    .MainPage p {
-        font-size: 16px;
-    }
-
-    .MainPage .btn {
-        font-size: 16px;
-        padding: 12px 25px;
-    }
-
-    /* Services - stack vertically and disable scroll */
-    .service-containers {
-        flex-direction: column;
-        overflow-x: visible;
-        padding: 20px 10px;
-    }
-
-    .service-list {
-        width: 100%;
-        max-width: none;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-    }
-
-    /* Contact section */
     .contact-container {
-        padding-left: 0;
         max-width: 100%;
-        padding: 10px 20px 30px 20px;
+        padding: 8px 2vw 28px 2vw;
+        text-align: left;
     }
-
     .contact-container h2 {
-        font-size: 22px;
+        font-size: 20px;
+        margin-bottom: 12px;
     }
-
     .contact-container p {
         font-size: 16px;
+        margin-bottom: 20px;
     }
-
+    .contact-form {
+        max-width: 100%;
+        margin: 0;
+    }
     .contact-form input[type="text"],
     .contact-form input[type="email"],
     .contact-form textarea {
         font-size: 16px;
-        padding: 12px 14px;
+        padding: 9px 10px;
+        margin-bottom: 12px;
     }
-
     .contact-form button.btn {
         font-size: 16px;
-        padding: 14px;
+        padding: 12px;
         width: 100%;
+        box-sizing: border-box;
     }
 }
+
+
