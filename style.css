@@ -233,6 +233,16 @@ footer p {
     color: #bfbfbf;
     margin: 0; /* Remove default margin to center properly */
 }
+@media (max-width: 768px) {
+    footer {
+        padding: 10px 8px;
+    }
+    footer p {
+        font-size: 18px;
+        margin-bottom: 4px;
+        text-align: left;
+        word-break: break-word;
+    }
 
 
 /* About Section */
